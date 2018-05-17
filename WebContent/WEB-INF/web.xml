@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>mytmall.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>BackServletFilter</filter-name>
+    <filter-class>mytmall.filter.BackServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>BackServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+    <filter>
+    <filter-name>ForeCheckLoginFilter</filter-name>
+    <filter-class>mytmall.filter.ForeCheckLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ForeCheckLoginFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <filter>
+    <filter-name>ForeServletFilter</filter-name>
+    <filter-class>mytmall.filter.ForeServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ForeServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  
+  
+  <session-config>
+ 	 <session-timeout>15</session-timeout>
+  </session-config>
+</web-app>
